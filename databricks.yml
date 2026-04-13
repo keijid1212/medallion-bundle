@@ -1,0 +1,28 @@
+bundle:
+  name: medallion_bundle
+
+workspace:
+  host: https://community.cloud.databricks.com
+  profile: community
+
+artifacts:
+  medallion_whl:
+    type: whl
+    path: .
+
+resources:
+  jobs:
+    medallion_pipeline:
+      name: medallion_pipeline_bundle
+      tasks:
+        - task_key: run_pipeline
+          python_wheel_task:
+            package_name: medallion
+            entry_point: pipeline
+          libraries:
+            - whl: ./dist/*.whl
+          environment_key: default
+      environments:
+        - environment_key: default
+          spec:
+            client: "2"
