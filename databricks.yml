@@ -18,10 +18,10 @@ resources:
           python_wheel_task:
             package_name: medallion
             entry_point: pipeline
-          libraries:
-            - whl: ./dist/*.whl
           environment_key: default
       environments:
         - environment_key: default
           spec:
             client: "2"
+            dependencies:
+              - ./dist/*.whl
