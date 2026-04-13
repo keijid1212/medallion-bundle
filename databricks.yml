@@ -2,7 +2,7 @@ bundle:
   name: medallion_bundle
 
 workspace:
-  host: https://community.cloud.databricks.com
+  host: https://dbc-e174c676-4da5.cloud.databricks.com
 
 artifacts:
   medallion_whl:
