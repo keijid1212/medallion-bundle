@@ -3,7 +3,6 @@ bundle:
 
 workspace:
   host: https://community.cloud.databricks.com
-  profile: community
 
 artifacts:
   medallion_whl:
